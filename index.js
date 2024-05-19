@@ -1,7 +1,22 @@
 const express = require('express');
 const app = express();
 
-app.listen(3000, (req, res)=>{
+require("dotenv").config();
+const PORT = process.env.PORT || 4000;
+
+app.use(express.json());
+
+const todoRoutes = require("./routes/todos");
+
+app.use("/api/v1", todoRoutes);
+app.listen(PORT, (req, res)=>{
     // res.send('Hi');
-    console.log("App is running successfully");
+    console.log(`Server is running successfully at ${PORT}`);
+});
+
+const dbConnect = require("./config/database");
+dbConnect();
+
+app.get("/", (req,res)=>{
+    res.send(`<h1> This is HOMEPAGFE baby</h1>`)
 })
