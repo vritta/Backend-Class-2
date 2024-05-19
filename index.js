@@ -3,7 +3,7 @@ const app = express();
 
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
-
+//middleware to parse json body
 app.use(express.json());
 
 const todoRoutes = require("./routes/todos");
