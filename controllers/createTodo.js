@@ -22,7 +22,7 @@ exports.createTodo = async(req, res)=>{
             {
                 success:false,
                 data:"Internal server error",
-                message:'Entry Created Successfully'
+                message:'Entry Failed'
             }
         );
     }

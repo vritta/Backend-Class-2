@@ -13,10 +13,10 @@ app.listen(PORT, (req, res)=>{
     // res.send('Hi');
     console.log(`Server is running successfully at ${PORT}`);
 });
-
 const dbConnect = require("./config/database");
 dbConnect();
 
+
 app.get("/", (req,res)=>{
-    res.send(`<h1> This is HOMEPAGFE baby</h1>`)
+    res.send(`<h1> This is HOMEPAGE baby</h1>`)
 })
